@@ -41,6 +41,7 @@ body {
 .bottom-row {
     display: flex;
     justify-content: space-around;
+	flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -54,6 +55,7 @@ body {
     background-color: #e0e0e0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, background-color 0.3s;
+	box-sizing: border-box;
 }
 
 .box:hover {
@@ -123,4 +125,33 @@ section p {
     font-size: 1.2em;
     line-height: 1.6;
     color: #555;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Take up more width on smaller screens */
+        padding: 15px;
+    }
+
+    .header {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .main-content, .bottom-row {
+        flex-direction: column; /* Stack content vertically on small screens */
+        align-items: center; /* Center the items on small screens */
+    }
+
+    .box {
+        width: 100%; /* Make boxes take up full width on mobile */
+        padding: 15px;
+        margin-bottom: 20px; /* Add space between boxes */
+		box-sizing: border-box;
+    }
+
+    .box h2 {
+        font-size: 1.2em;
+    }
 }
